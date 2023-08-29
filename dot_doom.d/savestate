@@ -1,0 +1,15 @@
+;; -*- mode: emacs-lisp; eval: (progn (pp-buffer) (indent-buffer)) -*-
+((def-persp "main"
+   ((def-buffer "todo.org" "/home/wyatt/Documents/org/todo.org" org-mode)
+    (def-buffer "test.org" "/home/wyatt/Documents/org/test.org" org-mode)
+    (def-buffer "tech_knowledge.org" "/home/wyatt/Documents/org/tech_knowledge.org" org-mode)
+    (def-buffer "shuttletracker.org" "/home/wyatt/Documents/org/shuttletracker.org" org-mode)
+    (def-buffer "notes_job.org" "/home/wyatt/Documents/org/notes_job.org" org-mode)
+    (def-buffer "journal.org" "/home/wyatt/Documents/org/journal.org" org-mode)
+    (def-buffer "introtoai4150.org" "/home/wyatt/Documents/org/introtoai4150.org" org-mode)
+    (def-buffer "gitexam.org" "/home/wyatt/Documents/org/gitexam.org" org-mode)
+    (def-buffer "database4380.org" "/home/wyatt/Documents/org/database4380.org" org-mode)
+    (def-buffer "cooking.org" "/home/wyatt/Documents/org/cooking.org" org-mode))
+   (def-wconf nil)
+   (def-params nil)
+   nil nil nil))

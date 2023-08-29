@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: matlab_code_listing
+# uuid: matlab_code_listing
+# key: matlisting
+# condition: t
+# --
+
+#+ATTR_LATEX: :options frame=single, numbers=left, breaklines=true, stepnumber=1,  numbersep=10pt, caption={${`yas-selected-text`}}
+#+BEGIN_SRC matlab
+$2
+#+END_SRC$0

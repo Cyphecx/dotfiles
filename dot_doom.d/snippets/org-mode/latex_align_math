@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: latex_align_math
+# uuid: latex_align_math
+# key: mathalign
+# condition: t
+# --
+
+\begin{align*}
+    $0
+\end{align*}

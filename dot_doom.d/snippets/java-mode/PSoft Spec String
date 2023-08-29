@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: PSoft Spec String
+# uuid: psoftspecstring
+# key: pspec
+# condition: t
+# --
+
+/**
+ *@param
+ *@return
+ *@throws
+ *@requires
+ *@effects
+ *@modifies
+ */

@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: progress_update
+# uuid:
+# key: progress_update
+# condition: t
+# --
+Wyatt Hauben
+Shuttle Tracker
+
+This Week
+
+Next Week
+
+Blockers
+There are currently no technical blockers.
+
+Links

@@ -1,0 +1,54 @@
+# -*- mode: snippet -*-
+# name: latexheadder
+# uuid: latexheadder
+# key: latexheadder
+# condition: t
+# --
+
+#+AUTHOR: Wyatt Hauben
+#+OPTIONS: toc:nil num:nil title:nil \n:nil
+:export_options:
+#+LATEX_CLASS: plain-letter
+#+LATEX_CLASS_OPTIONS: [12pt]
+
+# imports
+#+LATEX_HEADER: \usepackage[explicit]{titlesec}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{mathtools} % used for math equations
+#+LATEX_HEADER: \usepackage{relsize} % allows resizing math symbols
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{indentfirst}
+
+# Sets line width
+#+LATEX_HEADER: \usepackage{setspace}
+#+LATEX_HEADER: \onehalfspacing
+
+# Disables paragraph indent
+#+LATEX_HEADER: \usepackage{parskip}
+
+# Reduces space between enumeration list items
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \setlist{noitemsep}
+
+# Set Margins
+#+LATEX_HEADER: \usepackage[margin=0.75in]{geometry}
+# Increase paragraph indent
+#+LATEX_HEADER: \edef\restoreparindent{\parindent=\the\parindent\relax}
+#+LATEX_HEADER: \usepackage[skip=\medskipamount]{parskip}
+#+LATEX_HEADER: \restoreparindent
+
+# Header
+#+LATEX_HEADER: \fancypagestyle{firstpage}{
+#+LATEX_HEADER: \fancyhf{} % used for the fancy header
+#+LATEX_HEADER: \setlength{\headheight}{50pt} % header height
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \rhead{\textbf{\ `(replace-regexp-in-string "_" "\\_"  (get-title-org buffer-file-name) t t)`}}
+#+LATEX_HEADER: \lhead{Wyatt Hauben \\\\ haubew@rpi.edu \\\\ \today}
+#+LATEX_HEADER: \lfoot{}
+#+LATEX_HEADER: \cfoot{}
+#+LATEX_HEADER: \rfoot{\small\thepage}
+#+LATEX_HEADER: \headsep 1.5em }
+\thispagestyle{firstpage}
+:end:

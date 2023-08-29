@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: latmatrix
+# uuid: latmatrix
+# key: matmat
+# condition: t
+# --
+
+#+attr_latex: :mode math :environment pmatrix
+| | |
