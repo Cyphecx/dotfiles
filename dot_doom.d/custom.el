@@ -17,6 +17,7 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
+ '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(objed-cursor-color "#ff6c6b")
  '(org-agenda-files
    '("/home/wyatt/Documents/org/notes.org" "/home/wyatt/Documents/org/cooking.org" "/home/wyatt/Documents/org/database4380.org" "/home/wyatt/Documents/org/gitexam.org" "/home/wyatt/Documents/org/introtoai4150.org" "/home/wyatt/Documents/org/journal.org" "/home/wyatt/Documents/org/notes_job.org" "/home/wyatt/Documents/org/shuttletracker.org" "/home/wyatt/Documents/org/tech_knowledge.org" "/home/wyatt/Documents/org/test.org" "/home/wyatt/Documents/org/todo.org"))
@@ -46,7 +47,8 @@
     (cons 320 "#6f4e52")
     (cons 340 "#5B6268")
     (cons 360 "#5B6268")))
- '(vc-annotate-very-old-color nil))
+ '(vc-annotate-very-old-color nil)
+ '(warning-suppress-types '((emacs) (defvaralias))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

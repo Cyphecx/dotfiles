@@ -98,15 +98,23 @@
 
 ;; Dimitri's latex classes
 (with-eval-after-load 'ox-latex
-(add-to-list 'org-latex-classes
-             '("plain-letter"
-               "\\documentclass{article}\n[NODEFAULT-PACKAGES]\n[PACKAGES]\n[EXTRA]"
-               ("\\section{%s}"       . "\\section*{%s}")
-               ("\\subsection{%s}"    . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}"     . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}"  . "\\subparagraph*{%s}"))))
+        (add-to-list 'org-latex-classes
+                '("plain-letter"
+                "\\documentclass{article}\n[NODEFAULT-PACKAGES]\n[PACKAGES]\n[EXTRA]"
+                ("\\section{%s}"       . "\\section*{%s}")
+                ("\\subsection{%s}"    . "\\subsection*{%s}")
+                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                ("\\paragraph{%s}"     . "\\paragraph*{%s}")
+                ("\\subparagraph{%s}"  . "\\subparagraph*{%s}"))))
 
+(with-eval-after-load 'ox-latex
+        (add-to-list 'org-latex-classes
+                '("two_col_article" "\\documentclass[10pt,twocolumn]{article}"
+                        ("\\section{%s}" . "\\section*{%s}")
+                        ("\\subsection{%s}" . "\\subsection*{%s}")
+                        ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                        ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                        ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 ;; redefines lsp leader away from s-l as this is captured by i3
 ;;(define-key lsp-mode-map (kbd "C-c C-l") lsp-command-map)
 
@@ -121,6 +129,25 @@
       :leader
       :m "o m" #'org-agenda-month-view
       :desc "Org month agenda")
+
+
+;; Compilation buffer
+(defun close-all-compilation-buffers ()
+  "Close all buffers running in Compilation mode and show a message in the status bar."
+  (interactive)
+  (let ((closed-buffers 0))
+    (dolist (buffer (buffer-list))
+      (with-current-buffer buffer
+        (when (derived-mode-p 'compilation-mode)
+          (kill-buffer buffer)
+          (setq closed-buffers (1+ closed-buffers)))))
+    (if (zerop closed-buffers)
+      (message "No Compilation mode buffers to close.")
+      (message "Closed %d Compilation mode buffers." closed-buffers))))
+
+(map! :leader
+      :n "c q" 'close-all-compilation-buffers
+      :desc "Closes all open test/compilation buffers")
 
 ;;(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
